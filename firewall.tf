@@ -33,18 +33,18 @@ resource "google_compute_firewall" "internal" {
   target_tags = ["swarm"]
 }
 
-resource "google_compute_firewall" "http" {
-  name    = "${terraform.workspace}-https"
-  network = "${google_compute_network.swarm.name}"
-
-  allow {
-    protocol = "tcp"
-    ports    = ["80", "443"]
-  }
-
-  source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["swarm"]
-}
+//resource "google_compute_firewall" "http" {
+//  name    = "${terraform.workspace}-https"
+//  network = "${google_compute_network.swarm.name}"
+//
+//  allow {
+//    protocol = "tcp"
+//    ports    = ["80", "443"]
+//  }
+//
+//  source_ranges = ["0.0.0.0/0"]
+//  target_tags   = ["swarm"]
+//}
 
 resource "google_compute_firewall" "management" {
   name    = "${terraform.workspace}-management"
